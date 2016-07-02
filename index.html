@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ValenciaIdeal</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/datepicker3.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<!--Icons-->
+</head>
+
+<body>
+
+<!--**************************************HEADER**********************************************************-->
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><span>Placing</span>Valencia</a>
+			</div>
+
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+<!--******************************SIDEBAR IZQUIERDO******************************************************-->
+
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-3 sidebar">
+		<h3>¿Que busco en mi zona?</h3>
+		<form role="form">
+
+			<fieldset>
+			<legend>Direcciones fijas<a id="agregarCampo" role="button" class="btn btn-info btn-xs" href="#">Agregar</a></legend>
+			<div class="form-group" id="distancia">
+				<label>Distancia máxima a las distancias fijas<input type="number" min="0" max="1000" step="100" value="50" name="val"> m</label>
+			</div>
+			<label for="calles"></label>
+			<div id="contenedor" class="form-group">
+		    	<div class="added">
+					<input type="text" list="direcciones" class="form-control" name="calles[]" id="calles_1"><a href="#" class="eliminar">&times;</a>
+				</div>
+
+					<datalist id="direcciones">
+					    <option value="abel"></option>
+					    <option value="abigail"></option>
+					    <option value="adrian"></option>
+					    <option value="airan"></option>
+					    <option value="alberto"></option>
+					    <option value="claudio"></option>
+					    <option value="clemente"></option>
+					    <option value="samuel"></option>
+					    <option value="sergio"></option>
+					</datalist>
+			</div>
+			</fieldset>
+			<fieldset>
+			<legend>Transporte</legend>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="transporte[]" value="0"> Paradas de EMT </label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="transporte[]" value="1"> Aparcamiento no regulado </label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="transporte[]" value="2"> Aparcabicis</label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="transporte[]" value="3"> Valenbici</label>
+				</div>
+			</fieldset>
+			<fieldset>
+			<legend>Instalaciones deportivas</legend>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="i_deportivas[]" value="0"> Campos de Fútbol</label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="i_deportivas[]" value="1"> Pavellones</label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="i_deportivas[]" value="2"> Complejos deportivos</label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="i_deportivas[]" value="3"> Piscinas</label>
+				</div>
+			</fieldset>
+			<fieldset>
+			<legend>Recursos varios</legend>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="i_varias[]" value="0"> Bibliotecas </label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="i_varias[]" value="1"> Centros educativos</label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="i_varias[]" value="2"> Centros sociales</label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="i_varias[]" value="3"> Instalaciones sanitarias</label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="i_varias[]" value="4"> Centros de actividades para personas mayores</label>
+				</div>
+				<div class="checkbox">
+				    <label><input type="checkbox" name="i_varias[]" value="5"> Centros de atención de personas mayores</label>
+				</div>
+			</fieldset>
+		  <button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div><!--/.sidebar-->
+
+
+<!--**************************************MAPA LEAFLET**********************************************************-->
+
+	<div id="mapid">
+	</div><!--/#mapid-->
+
+
+<!--*****************************************SCRIPTS***********************************************************-->
+
+	<!--**********************************SCRIPTS LEAFLET**********************************************************-->
+
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<script src="js/map_generator.js"></script>
+</body>
+
+</html>
